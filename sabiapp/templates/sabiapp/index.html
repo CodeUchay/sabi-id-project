@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image">
+        <button type="submit">Upload</button>
+    </form>
+    {% if uploaded_file_url %}
+        <p>Uploaded Image:</p>
+        <img src="{{ uploaded_file_url }}" alt="Uploaded Image">
+    {% endif %}
+    {% if output_image_url %}
+        <p>Image with Background Changed:</p>
+        <img src="{{ output_image_url }}" alt="Output Image">
+    {% endif %}
+</body>
+</html>

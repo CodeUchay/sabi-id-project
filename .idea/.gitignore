@@ -1,0 +1,4 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/deeplabv3_xception_tf_dim_ordering_tf_kernels.h5
